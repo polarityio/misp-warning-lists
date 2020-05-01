@@ -6,6 +6,10 @@ The Polarity MISP Warning Lists integration searches MISP hash, domain and IPv4 
 |---|
 |*MISP Warning lists lookup example* |
 
+## Supported Lists
+
+This integration supports all MISP warning lists except for CIDR and regex type lists as well as the Majestic Million and Tranco lists. Please see the Majestic Million integration if you are interested in that data set: https://github.com/polarityio/majestic-million
+
 The MISP Warning Lists integration is designed to automatically fetch data from the MISP Warning lists github repository located here: https://github.com/MISP/misp-warninglists.  The integration can be set to automatically update lists, manually update lists via the MISP github repo, or manually update lists in an offline manner.
 
 ## Automatic list updates
@@ -16,13 +20,13 @@ By default the integration is configured to automatically fetch the latest list 
 
 ## Manual list updates via Github
 
-To manually update the integration first ensure that automatic updates are disabled by unchecking the `Enable Auto Updates` option via the Polarity UI.  Then, from within the integration directory on your server run the following command:
+To manually update the integration, first ensure that automatic updates are disabled by unchecking the `Enable Auto Updates` option via the Polarity UI.  Then, from within the integration directory on your server run the following command:
 
 ```
 npm run update:remote
 ```
 
-For remote updates to work you must have `git` installed on your server (`yum install git`) and you must have network connectivity to the MISP warning lists github repository located at https://github.com/MISP/misp-warninglists
+For remote updates to work you must have `git` installed on your server (`yum install git`) and you must have network connectivity to the MISP warning lists Github repository located at https://github.com/MISP/misp-warninglists
 
 ## Offline list updates via local repository
 
@@ -51,7 +55,16 @@ Finally, run the local update command from inside the integration directory
 ```
 npm run update:local
 ```
+If the MISP warning lists github repo is not properly copied to this integrations directory you will see the following error:
 
+```
+{ [Error: ENOENT: no such file or directory, scandir './misp-warninglists/lists']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: './misp-warninglists/lists' }
+
+```
 
 ## MISP Warning Lists Integration Options
 
