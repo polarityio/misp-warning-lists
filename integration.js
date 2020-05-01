@@ -13,6 +13,8 @@ function startup(logger) {
 }
 
 async function doLookup(entities, options, cb) {
+  Logger.trace({ entities }, 'doLookup');
+  
   if (indicators === null) {
     indicators = await loadIndicators(options.enabledLists);
     Logger.info(`Loaded ${Object.keys(indicators).length} malware list indicators`);
