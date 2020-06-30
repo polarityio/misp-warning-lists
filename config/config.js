@@ -26,7 +26,7 @@ module.exports = {
    * @optional
    */
   description:
-    "SlashNext allows Polarity users to leverage SlashNext's On-demand Threat Intelligence (OTI) for the analysis of suspicious IPv4 addresses and domains.",
+    "The Polarity MISP Warning Lists integration searches MISP hash, domain and IPv4 based warning lists and returns related list information.",
   entityTypes: ['IPv4', 'domain', 'hash'],
   /**
    * Provide custom component logic and template for rendering the integration details block.  If you do not
