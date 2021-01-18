@@ -3,6 +3,7 @@ const schedule = require('node-schedule');
 const { loadIndicators } = require('./lib/list-loader');
 const updateList = require('./lib/update-lists');
 
+const DO_REMOTE_UPDATE = true;
 let previousAutoUpdate = null;
 let indicators = null;
 let Logger;
@@ -14,7 +15,7 @@ function startup(logger) {
 
 async function doLookup(entities, options, cb) {
   Logger.trace({ entities }, 'doLookup');
-  
+
   if (indicators === null) {
     indicators = await loadIndicators(options.enabledLists);
     Logger.info(`Loaded ${Object.keys(indicators).length} malware list indicators`);
@@ -36,7 +37,7 @@ async function doLookup(entities, options, cb) {
     rule.minute = 0; // 11:00 PM
     updateListJob = schedule.scheduleJob(rule, async () => {
       Logger.info('Running automatic updating of MISP malware list data');
-      await updateList.run();
+      await updateList.run(DO_REMOTE_UPDATE);
       Logger.info('Reloading updated malware list indicators');
       indicators = await loadIndicators(options.enabledLists);
       Logger.info(`Loaded ${Object.keys(indicators).length} malware list indicators`);
