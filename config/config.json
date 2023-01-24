@@ -7,6 +7,14 @@
   "styles": ["./styles/style.less"],
   "block": { "component": { "file": "./components/block.js" }, "template": { "file": "./templates/block.hbs" } },
   "logging": { "level": "info" },
+  "request": {
+    "cert": "",
+    "key": "",
+    "passphrase": "",
+    "ca": "",
+    "proxy": "",
+    "rejectUnauthorized": true
+  },
   "options": [
     {
       "key": "autoUpdate",
