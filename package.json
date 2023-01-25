@@ -1,7 +1,7 @@
 {
-  "main": "./integration.js",
   "name": "misp-warning-lists",
-  "version": "3.0.6-beta",
+  "version": "3.0.8-beta",
+  "main": "./integration.js",
   "private": true,
   "scripts": {
     "update:remote": "node -e \"require('./lib/update-lists').run(true)\"",
