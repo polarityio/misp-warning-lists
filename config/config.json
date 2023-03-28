@@ -1,4 +1,5 @@
 {
+  "polarityIntegrationUuid": "db9582f0-cce1-11ed-aeee-075d3490155d",
   "name": "MISP Warning lists",
   "acronym": "MISP-W",
   "description": "The Polarity MISP Warning Lists integration searches MISP hash, domain and IPv4 based warning lists and returns related list information.",
