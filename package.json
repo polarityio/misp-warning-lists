@@ -1,6 +1,6 @@
 {
   "name": "misp-warning-lists",
-  "version": "3.0.10",
+  "version": "3.0.11",
   "main": "./integration.js",
   "private": true,
   "scripts": {
