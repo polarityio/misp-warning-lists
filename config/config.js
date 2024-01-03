@@ -24,7 +24,7 @@ module.exports = {
    */
   description:
     'The Polarity MISP Warning Lists integration searches MISP hash, domain and IPv4 based warning lists and returns related list information.',
-  entityTypes: ['IPv4', 'domain', 'hash'],
+  entityTypes: ['IPv4', 'domain', 'MD5', 'SHA1', 'SHA256'],
   defaultColor: 'light-gray',
   /**
    * Provide custom component logic and template for rendering the integration details block.  If you do not
@@ -51,7 +51,7 @@ module.exports = {
     key: '',
     passphrase: '',
     ca: '',
-    proxy: ""
+    proxy: ''
   },
   /**
    * Options that are displayed to the user/admin in the Polarity integration user-interface.  Should be structured
@@ -80,20 +80,26 @@ module.exports = {
         { display: 'alexa', value: 'alexa' },
         { display: 'automated-malware-analysis', value: 'automated-malware-analysis' },
         { display: 'bank-website', value: 'bank-website' },
+        { display: 'captive-portals', value: 'captive-portals' },
         { display: 'cisco_top1000', value: 'cisco_top1000' },
         { display: 'cisco_top10k', value: 'cisco_top10k' },
         { display: 'cisco_top20k', value: 'cisco_top20k' },
         { display: 'cisco_top5k', value: 'cisco_top5k' },
         { display: 'common-ioc-false-positive', value: 'common-ioc-false-positive' },
         { display: 'covid', value: 'covid' },
-        { display: 'covid-19-cyber-threat-coalition-whitelist', value: 'covid-19-cyber-threat-coalition-whitelist' },
+        {
+          display: 'covid-19-cyber-threat-coalition-whitelist',
+          value: 'covid-19-cyber-threat-coalition-whitelist'
+        },
         { display: 'covid-19-krassi-whitelist', value: 'covid-19-krassi-whitelist' },
         { display: 'crl-hostname', value: 'crl-hostname' },
         { display: 'dax30', value: 'dax30' },
+        { display: 'digitalside', value: 'digitalside' },
         { display: 'disposable-email', value: 'disposable-email' },
         { display: 'dynamic-dns', value: 'dynamic-dns' },
         { display: 'eicar.com', value: 'eicar.com' },
         { display: 'empty-hashes', value: 'empty-hashes' },
+        { display: 'findip-host', value: 'findip-host' },
         { display: 'google', value: 'google' },
         { display: 'google-chrome-crux-1million', value: 'google-chrome-crux-1million' },
         { display: 'microsoft', value: 'microsoft' },
@@ -114,6 +120,7 @@ module.exports = {
         { display: 'ti-falsepositives', value: 'ti-falsepositives' },
         { display: 'tlds', value: 'tlds' },
         { display: 'tranco10k', value: 'tranco10k' },
+        { display: 'umbrella-blockpage-hostname', value: 'umbrella-blockpage-hostname' },
         { display: 'university_domains', value: 'university_domains' },
         { display: 'url-shortener', value: 'url-shortener' },
         { display: 'whats-my-ip', value: 'whats-my-ip' }
@@ -123,20 +130,26 @@ module.exports = {
         { display: 'alexa', value: 'alexa' },
         { display: 'automated-malware-analysis', value: 'automated-malware-analysis' },
         { display: 'bank-website', value: 'bank-website' },
+        { display: 'captive-portals', value: 'captive-portals' },
         { display: 'cisco_top1000', value: 'cisco_top1000' },
         { display: 'cisco_top10k', value: 'cisco_top10k' },
         { display: 'cisco_top20k', value: 'cisco_top20k' },
         { display: 'cisco_top5k', value: 'cisco_top5k' },
         { display: 'common-ioc-false-positive', value: 'common-ioc-false-positive' },
         { display: 'covid', value: 'covid' },
-        { display: 'covid-19-cyber-threat-coalition-whitelist', value: 'covid-19-cyber-threat-coalition-whitelist' },
+        {
+          display: 'covid-19-cyber-threat-coalition-whitelist',
+          value: 'covid-19-cyber-threat-coalition-whitelist'
+        },
         { display: 'covid-19-krassi-whitelist', value: 'covid-19-krassi-whitelist' },
         { display: 'crl-hostname', value: 'crl-hostname' },
         { display: 'dax30', value: 'dax30' },
+        { display: 'digitalside', value: 'digitalside' },
         { display: 'disposable-email', value: 'disposable-email' },
         { display: 'dynamic-dns', value: 'dynamic-dns' },
         { display: 'eicar.com', value: 'eicar.com' },
         { display: 'empty-hashes', value: 'empty-hashes' },
+        { display: 'findip-host', value: 'findip-host' },
         { display: 'google', value: 'google' },
         { display: 'google-chrome-crux-1million', value: 'google-chrome-crux-1million' },
         { display: 'microsoft', value: 'microsoft' },
@@ -157,6 +170,7 @@ module.exports = {
         { display: 'ti-falsepositives', value: 'ti-falsepositives' },
         { display: 'tlds', value: 'tlds' },
         { display: 'tranco10k', value: 'tranco10k' },
+        { display: 'umbrella-blockpage-hostname', value: 'umbrella-blockpage-hostname' },
         { display: 'university_domains', value: 'university_domains' },
         { display: 'url-shortener', value: 'url-shortener' },
         { display: 'whats-my-ip', value: 'whats-my-ip' }
