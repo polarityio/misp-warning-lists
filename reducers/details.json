@@ -1,0 +1,31 @@
+{
+  "root": {
+    "path": "",
+    "on_null": "return_empty"
+  },
+  "pipeline": [
+    {
+      "op": "copy",
+      "from": "[].description",
+      "to": "reduced_results.lists[].description"
+    },
+    {
+      "op": "copy",
+      "from": "[].name",
+      "to": "reduced_results.lists[].name"
+    },
+    {
+      "op": "copy",
+      "from": "[].repo",
+      "to": "reduced_results.lists[].repo"
+    },
+    {
+      "op": "prune",
+      "strategy": "empty_values",
+      "target": "reduced_results"
+    }
+  ],
+  "output": {
+    "result": "$working.reduced_results"
+  }
+}

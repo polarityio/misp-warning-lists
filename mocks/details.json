@@ -1,0 +1,26 @@
+[
+  {
+    "indicator": "8.8.8.8",
+    "description": "Event contains one or more public DNS resolvers as attribute with an IDS flag set",
+    "name": "List of known public DNS resolvers",
+    "version": 4,
+    "shortName": "Public dns resolvers",
+    "repo": "public-dns-resolvers"
+  },
+  {
+    "indicator": "8.8.8.8",
+    "description": "Top 1000 websites from Alexa 1M",
+    "name": "Top 1000 websites and domains",
+    "version": 20210825,
+    "shortName": "Alexa top 1000",
+    "repo": "alexa-top-1000"
+  },
+  {
+    "indicator": "8.8.8.8",
+    "description": "List of known Google domains and IP addresses",
+    "name": "List of known google domains",
+    "version": 3,
+    "shortName": "Google",
+    "repo": "google"
+  }
+]
